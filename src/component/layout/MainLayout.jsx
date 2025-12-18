@@ -9,7 +9,16 @@ import { Input, Layout, Menu, Space, theme } from "antd";
 import { Outlet, useNavigate } from "react-router-dom";
 import logo from "../../assets/image/logo.png";
 import profile from "../../assets/image/profile.jpg";
-
+import { FaUserTag } from "react-icons/fa6";
+//Import Icon
+import {
+  MdProductionQuantityLimits,
+  MdDashboardCustomize,
+  MdRoundaboutRight,
+} from "react-icons/md";
+import { AiFillCustomerService } from "react-icons/ai";
+import { FaUserFriends, FaUserClock } from "react-icons/fa";
+import { BiSolidUserCheck } from "react-icons/bi";
 const { Header, Content, Footer, Sider } = Layout;
 
 function getItem(label, key, icon, children) {
@@ -17,13 +26,14 @@ function getItem(label, key, icon, children) {
 }
 
 const items = [
-  getItem("Dashboard", "/", <PieChartOutlined />),
-  getItem("Customer", "customer", <DesktopOutlined />),
-  getItem("Product", "product", <DesktopOutlined />),
-  getItem("About", "about", <DesktopOutlined />),
-  getItem("User", "sub1", <UserOutlined />, [
-    getItem("User", "/user/list"),
-    getItem("Role", "/user/role"),
+  getItem("Dashboard", "/", <MdDashboardCustomize />),
+  getItem("Customer", "customer", <AiFillCustomerService />),
+  getItem("Product", "product", <MdProductionQuantityLimits />),
+  getItem("About", "about", <MdRoundaboutRight />),
+  getItem("Role", "role", <BiSolidUserCheck />),
+  getItem("User", "sub1", <FaUserFriends />, [
+    getItem("User", "/user/list", <FaUserFriends />),
+    getItem("Role", "/user/role", <FaUserTag />),
   ]),
   getItem("Files", "9", <FileOutlined />),
 ];
@@ -66,7 +76,7 @@ const MainLayout = () => {
                 </div>
               </div>
             </div>
-             <Input.Search placeholder="Search"/>
+            <Input.Search placeholder="Search" />
           </Space>
           <div>
             <Space>

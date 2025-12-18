@@ -9,6 +9,7 @@ import MainLayout from './component/layout/MainLayout';
 import MainLayoutLogin from './component/layout/MainLayoutLogin';
 import CustomerPage from './page/customer/CustomerPage';
 import ProductPage from './page/product/ProductPage';
+import RolePage from './page/role/RolePage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/about' element={<AboutPage />} />
           <Route path='/customer' element={<CustomerPage />} />
           <Route path='/product' element={<ProductPage />} />
+          <Route path='/role' element={<RolePage />} />
           
           <Route path='*' element={<RouteNoFound />} />
         </Route>
