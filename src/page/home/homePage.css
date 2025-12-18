@@ -1,0 +1,25 @@
+.container-home{
+    padding: 10px;
+    width: 300px;
+    overflow: auto;
+    border-radius: 10px;
+    background-color: goldenrod;
+}
+.txt-main {
+    font-size: 60px;
+    color: rgba(6, 10, 241, 0.405);
+    font-weight: bold;
+}
+
+.txt-sub-title {
+    font-size: 20px;
+    color: rgb(68, 151, 0);
+    font-weight: bold;
+}
+.bold{
+    font-weight: bold;
+}
+#txt-status{
+    color: red;
+    font-size: 20px;
+}
