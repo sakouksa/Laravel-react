@@ -1,29 +1,28 @@
 import React from "react";
-import { countStore } from "../../store/counStore";
-import { Button, Space } from "antd";
+import { productStore } from "../../store/ProductStore";
+import { Button, Space, Row, Col } from "antd";
 
 function ProductPage() {
   // Destructure all the actions you need from the store
-  const { count, increase, decrease, reset, update } = countStore();
-
+  const { list } = productStore();
   return (
     <div style={{ padding: "20px" }}>
       <div>ProductPage</div>
-      <h1>Count : {count}</h1>
-
-      <Space>
-        {/* Call the functions directly or use an arrow function that calls them */}
-        <Button onClick={increase}>+</Button>
-        <Button onClick={decrease}>-</Button>
-
-        {/* Adding the Reset functionality */}
-        <Button onClick={reset} danger>
-          Reset
-        </Button>
-
-        {/* Adding the Update functionality with a specific value */}
-        <Button onClick={() => update(888)}>Update to (888)</Button>
-      </Space>
+      <Row>
+        {list?.map((item, index) => (
+          <Col key={index} xs={24} md={8} lg={6}>
+            <div style={{ backgroundColor: "#eee", padding: 10, margin: 5 }}>
+              {/* <div style={{ width: "100%", height: 210, backgroundColor: "gray" }}>
+              </div> */}
+              <img src={item.image} alt={item.name} style={{ width: "100%", height: 210 }} />
+              <div style={{fontWeight:"bold"}}>{item.name}</div>
+              <div>{item.des}</div>
+              <div>Price: ${item.price}</div>
+              <Button type="primary">Add to Cart</Button>
+            </div>
+          </Col>
+        ))}
+      </Row>
     </div>
   );
 }
